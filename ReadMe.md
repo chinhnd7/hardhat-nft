@@ -23,3 +23,10 @@ We go through creating 3 different kinds of NFTs.
 3. Dynamic SVG NFT (Hosted 100% on-chain)
 
 - Uses price feeds to be dynamic
+
+## Pinata
+Pinata is an NFT media management service that allows users to host, manage and share files of any kind on the blockchain of their choice. As an IPFS pinning service, we focus on giving both technical and non-technical creators a fast, easy, and reliable way to share content without limits.
+For developers, Pinata is the easiest way to pin content to IPFS and build web3 applications without having to build and manage your own IPFS nodes. We do all the heavy lifting for you.
+
+All about methods:
+*https://www.npmjs.com/package/@pinata/sdk#pinFileToIPFS-anchor*
