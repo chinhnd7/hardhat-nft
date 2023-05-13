@@ -1,6 +1,6 @@
 # Overview
 
-What is URI?
+What is URI?   
 A URI is a string containing characters that identify a physical or logical resource. URI follows syntax rules to ensure uniformity. Moreover, it also maintains extensibility via a hierarchical naming scheme. The full form of URI is Uniform Resource Identifier.
 
 Types of URI:
