@@ -19,10 +19,17 @@ We go through creating 3 different kinds of NFTs.
 2. Random IPFS NFT (IPFS Hosted NFT)
 
 - That uses Randomness to generate a unique NFT
+Pros: Cheap
+Cons: Someone needs to pin our data
 
 3. Dynamic SVG NFT (Hosted 100% on-chain)
 
 - Uses price feeds to be dynamic
+Pros: The data is on chain!
+Cons: MUCH more expensive!
+
+If price of ETH is above X -> Happy
+If it's below -> Frown face
 
 ## Pinata
 Pinata is an NFT media management service that allows users to host, manage and share files of any kind on the blockchain of their choice. As an IPFS pinning service, we focus on giving both technical and non-technical creators a fast, easy, and reliable way to share content without limits.
@@ -30,3 +37,7 @@ For developers, Pinata is the easiest way to pin content to IPFS and build web3 
 
 All about methods:
 *https://www.npmjs.com/package/@pinata/sdk#pinFileToIPFS-anchor*
+
+## What is an SVG
+- Scalable Vector Graphics
+*https://www.w3schools.com/graphics/svg_intro.asp*
