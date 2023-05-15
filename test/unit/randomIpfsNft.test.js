@@ -55,8 +55,7 @@ const {developmentChains} = require("../../helper-hardhat-config")
                         try {
                             const tokenUri = await randomIpfsNft.getDogTokenUris(0)
                             const tokenCounter = await randomIpfsNft.getTokenCounter()
-                            console.log(tokenUri)
-                            console.log(tokenCounter)
+
                             assert.equal(tokenUri.toString().includes("ipfs://"), true)
                             assert.equal(tokenCounter.toString(), "1")
                             resolve()
@@ -97,7 +96,7 @@ const {developmentChains} = require("../../helper-hardhat-config")
                 assert.equal(2, expectedValue)
             })
             it("should revert if moddedRng > 99", async function () {
-                await expect(randomIpfsNft.getBreedFromModdedRng(100)).to.be.revertedWith(
+                await expect(randomIpfsNft.getBreedFromModdedRng(101)).to.be.revertedWith(
                     "RandomIpfsNft__RangeOutOfBounds"
                 )
             })
