@@ -29,7 +29,7 @@ module.exports = async function ({getNamedAccounts, deployments}) {
     const {deploy, log} = deployments
     const {deployer} = await getNamedAccounts()
     const chainId = network.config.chainId
-    let vrfCoordinatorV2Address, subscriptionId
+    let vrfCoordinatorV2Address, subscriptionId, vrfCoordinatorV2Mock
 
     // get the IPFS hashes of our images
     if (process.env.UPLOAD_TO_PINATA == "true") {
@@ -40,7 +40,7 @@ module.exports = async function ({getNamedAccounts, deployments}) {
     // 3. NFT.storage https://nft.storage/
 
     if(developmentChains.includes(network.name)) {
-        const vrfCoordinatorV2Mock = await ethers.getContract("VRFCoordinatorV2Mock")
+        vrfCoordinatorV2Mock = await ethers.getContract("VRFCoordinatorV2Mock")
         vrfCoordinatorV2Address = vrfCoordinatorV2Mock.address
         const tx = await vrfCoordinatorV2Mock.createSubscription()
         const txReceipt = await tx.wait(1)
@@ -68,6 +68,11 @@ module.exports = async function ({getNamedAccounts, deployments}) {
         log: true,
         waitConfirmations: network.config.blockConfirmations || 1,
     })
+
+    await vrfCoordinatorV2Mock.addConsumer(
+        subscriptionId,
+        randomIpfsNft.address
+    )
 
     log("------------------------------------")
 
