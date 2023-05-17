@@ -41,3 +41,20 @@ All about methods:
 ## What is an SVG
 - Scalable Vector Graphics
 *https://www.w3schools.com/graphics/svg_intro.asp*
+
+# Test on Opensea (testnets.opensea.io)
+Sepolia is not supported chain by OpenSea.
+So if we want test NFT in OpenSea, we have to use mumbai (polygon testnet) chain.
+All config for mumbai are on hardhat.config.js and helper-hardhat-config.js.
+
+**Price Feed Chainlink is not supporter for mumbai so we can only test with VRF (random NFT).**
+Run commands for testing on mumbai: (Only test with RandomIpfsNft).
+
+*Deploy NFT contract*
+```
+yarn hardhat deploy --network mumbai --tags randomipfs
+```
+*Mint NFT*
+```
+yarn hardhat deploy --tags mint-mumbai --network mumbai
+```
