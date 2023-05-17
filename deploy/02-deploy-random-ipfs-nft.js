@@ -78,9 +78,11 @@ module.exports = async function ({getNamedAccounts, deployments}) {
 
     log("------------------------------------")
 
-    if (!developmentChains.includes(network.name) && process.env.ETHERSCAN_API_KEY) {
-        log("Verifying...")
-        await verify(randomIpfsNft.address, args)
+    if (network.name !== "mumbai") {
+        if (!developmentChains.includes(network.name) && process.env.ETHERSCAN_API_KEY) {
+            log("Verifying...")
+            await verify(randomIpfsNft.address, args)
+        }
     }
 }
 
